@@ -20,7 +20,7 @@ class AppLayout extends Component
         $this->title = $title ? $title : "Udinus";
     }
 
-    public $styles = null;x
+    public $styles = null;
 
     /**
      * Get the view / contents that represent the component.

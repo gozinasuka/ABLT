@@ -24,10 +24,11 @@ class navbar extends Component
     public function render()
     {
         $navbar= [
-            'home'=>'/',
-            'about'=>'/about',
-            'profile'=>'/profile',
-            'blog'=>'/posts/first-post'
+            'Home'=>'/',
+            'About'=>'/about',
+            'Contact'=>'/contact',
+            'Profile'=>'/profile',
+            'Tasks'=>'/tasks',
             
         ];
         
