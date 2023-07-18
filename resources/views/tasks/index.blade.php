@@ -3,7 +3,7 @@
 
     <div style="margin-bottom: 15px">
 
-        <a href="/tasks/create"> Create New Tasks</a>
+        <h5> Create New Tasks</h5>
         <form action="/tasks" method="post">
             @csrf
             <input type="text" name="list" placeholder="the name of the task">
@@ -17,14 +17,27 @@
             @foreach($tasks as $task )
             <li>{{$task -> list}}</li>
 
-            @endforeach
-        </ol>
+    @endforeach
+    </ol>
     </div> --}}
 
-        <ul style="list-style-type: none">
-            @foreach($tasks as $index => $task )
-            <li>{{ $index + 1 }} - {{$task -> list}}</li>
+    <ul style="list-style-type: none">
 
-            @endforeach
-        </ul>
+        @foreach($tasks as $index => $task )
+
+        <li style="margin-bottom: 15px">
+            {{ $index + 1 }} - {{$task -> list}}
+
+            <div>
+                <a style="color: blue" href="/tasks/{{$task->id}}/edit">edit</a>
+                <form action="/tasks/{{$task->id}}" method="post" style="display : inline">
+                    @csrf
+                    @method('delete')
+                    <button type="submit">delete</button>
+                </form>
+            </div>
+        </li>
+        @endforeach
+        
+    </ul>
 </x-app-layout>
