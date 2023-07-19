@@ -50,7 +50,10 @@ class TasksController extends Controller
         -penggunaan creat akan memberika feedback data jika kita ingin return lagi datanya
         */
         
-        Task::create(['list' => $request -> list,]);
+        Task::create([
+            'list' => $request -> list,
+            'mark' => false,
+        ]);
         
         //dd('submitted');
 
@@ -94,7 +97,7 @@ class TasksController extends Controller
         // Task::where('id', $id)->delete();
         /* metode lebih simpel tanpa where , pengunaan find dilakukan jika kita mencari id */
         Task::find($id)->delete();
-        
+
         return back();
         
     }
